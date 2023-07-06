@@ -3,8 +3,8 @@
 }
 
 :root {
-    --hue: 500;
-    --saturation: 50%;
+    --hue: 200;
+    --saturation: 100%;
     --foreground-color: hsl(var(--hue), var(--saturation), 75%);
     --background-color: hsl(var(--hue), var(--saturation), 20%);
 }
@@ -12,6 +12,7 @@
 body {
     margin: 0;
     background-color: var(--background-color);
+    overflow: hidden;
 }
 
 .paddle {

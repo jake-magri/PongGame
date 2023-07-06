@@ -1,3 +1,6 @@
+const INITIAL_VELOCITY = .025
+const VELOCITY_INCREASE = .00001
+
 export default class Ball {
     constructor(ballElem) {
         this.ballElem = ballElem
@@ -18,6 +21,10 @@ export default class Ball {
 
     set y(value){
         this.ballElem.style.setProperty("--y", value)
+    }
+    // gets the position of the ball
+    rect() {
+        return this.ballElem.getBoundingClientRect()
     }
 
     reset(){
@@ -52,4 +59,13 @@ export default class Ball {
 
 function randomNumberBetween(min, max){
     return Math.random() * (max - min) + min
+}
+
+function isCollision(rect1, rect2){
+    return (
+        rect1.left <= rect2.right && 
+        rect1.right >= rect2.left &&
+        rect1.top <= rect2.bottom && 
+        rect1.bottom >= rect2.top
+        )
 }
